@@ -53,7 +53,7 @@ export function StudyGuide({ content, onCitationClick }: StudyGuideProps) {
           <button
             key={match.index}
             onClick={() => onCitationClick({ source, page, snippet: '' })}
-            className="text-blue-600 hover:underline text-sm"
+            className="text-blue-600 hover:underline text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
           >
             [{source}{page ? ` p.${page}` : ''}]
           </button>

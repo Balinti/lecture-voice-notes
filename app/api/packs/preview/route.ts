@@ -1,11 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { generateWithOpenAI } from '@/lib/openai';
 import { z } from 'zod';
+import { MIN_TEXT_LENGTH, DEFAULT_CARD_COUNT, MAX_CARD_COUNT } from '@/lib/constants';
 
 const previewSchema = z.object({
-  text: z.string().min(10, 'Text must be at least 10 characters'),
+  text: z.string().min(MIN_TEXT_LENGTH, `Text must be at least ${MIN_TEXT_LENGTH} characters`),
   title: z.string().optional(),
-  cardCount: z.number().min(1).max(20).optional().default(10),
+  cardCount: z.number().min(1).max(MAX_CARD_COUNT).optional().default(DEFAULT_CARD_COUNT),
 });
 
 export async function POST(request: NextRequest) {

@@ -1,6 +1,7 @@
 'use client';
 
 import { v4 as uuidv4 } from 'uuid';
+import { STORAGE_KEY, MAX_ANONYMOUS_REGENERATIONS } from './constants';
 
 export interface LocalCourse {
   id: string;
@@ -64,8 +65,6 @@ export interface LocalData {
   lastUpdated: string;
 }
 
-const STORAGE_KEY = 'citedeck_local_data';
-const MAX_ANONYMOUS_REGENERATIONS = 3;
 
 function getDefaultData(): LocalData {
   return {
