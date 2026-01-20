@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import GoogleAuth from '@/components/GoogleAuth';
 import { FlashCard } from '@/components/FlashCard';
 import { StudyGuide } from '@/components/StudyGuide';
 import { CitationModal } from '@/components/CitationModal';
@@ -512,15 +513,7 @@ export default function AppPage() {
             <span className="font-semibold text-xl">CiteDeck</span>
           </Link>
           <nav className="flex items-center gap-4">
-            <Link href="/auth" className="text-gray-600 hover:text-gray-900 text-sm">
-              Sign in
-            </Link>
-            <Link
-              href="/auth?mode=signup"
-              className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition"
-            >
-              Sign up
-            </Link>
+            <GoogleAuth />
           </nav>
         </div>
       </header>

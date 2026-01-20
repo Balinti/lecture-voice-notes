@@ -1,4 +1,7 @@
+'use client';
+
 import Link from 'next/link';
+import GoogleAuth from '@/components/GoogleAuth';
 
 export default function PricingPage() {
   const examPackEnabled = !!process.env.NEXT_PUBLIC_STRIPE_EXAM_PACK_PRICE_ID;
@@ -15,9 +18,7 @@ export default function PricingPage() {
             <span className="font-semibold text-xl">CiteDeck</span>
           </Link>
           <nav className="flex items-center gap-4">
-            <Link href="/auth" className="text-gray-600 hover:text-gray-900 text-sm">
-              Sign in
-            </Link>
+            <GoogleAuth />
             <Link
               href="/app"
               className="bg-blue-600 text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-blue-700 transition"
