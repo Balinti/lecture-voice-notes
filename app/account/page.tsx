@@ -74,12 +74,15 @@ export default async function AccountPage() {
             <span className="font-semibold text-xl">CiteDeck</span>
           </Link>
           <nav className="flex items-center gap-4">
+            <span className="text-sm text-gray-600 hidden sm:inline">
+              {user.email}
+            </span>
             <Link href="/dashboard" className="text-gray-600 hover:text-gray-900 text-sm">
               Dashboard
             </Link>
             <form action="/api/auth/signout" method="POST">
               <button type="submit" className="text-gray-600 hover:text-gray-900 text-sm">
-                Sign out
+                Sign Out
               </button>
             </form>
           </nav>
